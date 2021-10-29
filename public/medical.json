@@ -1,0 +1,51 @@
+[
+  {
+    "place": "Architecture in Barcelona Spain",
+    "location": "Spain",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/SVjSD7g/Architecture-in-Barcelona-Spain.png"
+  },
+  {
+    "place": "Eilean Donan Loch",
+    "location": "Duich Island, Scotland",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/N1PySgH/Eilean-Donan-Loch-Duich-Island-Scotland.png"
+  },
+  {
+    "place": "Golden Gate Bridge",
+    "location": "San Francisco, USA",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/Lk3qtkv/Golden-Gate-Bridge-San-Francisco-USA.png"
+  },
+  {
+    "place": "Lysefjorden",
+    "location": "Norway",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/Mh9XfbD/Lysefjorden-Norway.png"
+  },
+  {
+    "place": "Milford Sound",
+    "location": "New Zealand",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/0rsnRPg/Milford-Sound-New-Zealand.png"
+  },
+  {
+    "place": "Moraine Lake",
+    "location": "Canada",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/0MN7vnD/Moraine-Lake-Canada.png"
+  },
+  {
+    "place": "The Eiffel Tower",
+    "location": " Paris, France",
+    "days": "4",
+    "price": 250,
+    "img": "https://i.ibb.co/QfgPXFt/The-Eiffel-Tower-Paris-France.png"
+  }
+]

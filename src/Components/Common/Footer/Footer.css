@@ -1,0 +1,10 @@
+footer{
+    background-image: url(./footer.png);
+    background-repeat: no-repeat;
+    background-size: cover;  
+    color: whitesmoke;
+}
+footer svg{
+    color: whitesmoke;
+    margin: 5px 10px;
+}

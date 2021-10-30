@@ -7,7 +7,7 @@ import Nopage from "./Components/Common/Nopage/Nopage";
 import Home from "./Components/Home/Home";
 import Singleservice from "./Components/Home/Services/Singleservice/Singleservice";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-import Profiles from "./Components/Profiles/Profiles";
+import AddPlace from "./Components/Profiles/AddPlace";
 import AuthProvider from "./Context/AuthProvider";
 
 
@@ -21,8 +21,8 @@ function App() {
           <Route path="/home"> <Home></Home></Route>
           <Route path="/login"> <Login></Login></Route>
           <Route path="/registration"> <Registration></Registration> </Route>
-          <PrivateRoute exact path="/service/:serviceId"><Singleservice></Singleservice></PrivateRoute>
-          <PrivateRoute path="/profile"><Profiles></Profiles></PrivateRoute >
+          <PrivateRoute exact path="/service/:id"><Singleservice></Singleservice></PrivateRoute>
+          <PrivateRoute path="/addPlace"><AddPlace></AddPlace></PrivateRoute >
 
           <Route path='/*'><Nopage></Nopage></Route>
         </Switch>

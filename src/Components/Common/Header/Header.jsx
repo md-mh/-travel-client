@@ -21,7 +21,7 @@ const Header = () => {
                             {user.email ?
 
                                 <span className="profilemenu">
-                                    <Link className="nav-link" to="/profile">My Profile</Link>
+                                    <Link className="nav-link" to="/addPlace">Add a Place</Link>
                                     <span className="nav-link loginUser" >{user.displayName}</span>
                                     <button onClick={logOut} className="nav-link login" >Logout</button>
                                 </span>

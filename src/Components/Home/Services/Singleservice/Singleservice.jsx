@@ -5,29 +5,30 @@ import { useParams } from 'react-router';
 // Single service page details component 
 
 const Singleservice = () => {
-    const { serviceId } = useParams();
+    const { id } = useParams();
     const [serviceDetails, setServiceDetails] = useState([]);
-    const [singleService, setSingleService] = useState({});
     useEffect(
         () => {
-            fetch('/medical.json')
+            fetch(`http://localhost:5000/show/${id}`)
                 .then(res => res.json())
                 .then(data => setServiceDetails(data))
         }, []);
 
-    useEffect(
-        () => {
-            const foundServices = serviceDetails.find(service => service.id === serviceId)
-            setSingleService(foundServices);
-        }, [serviceDetails])
     return (
         <Container>
-            <Row>
-                <Col md={{ span: 6, offset: 3 }}>
-                    <h1 className="my-5 text-primary text-center"> Our {singleService?.title} Service</h1>
-                    <img src={singleService?.img} alt="service" height="400px" />
-                    <p className="my-3"> {singleService?.description} </p>
-                    <Button variant="info" className="mb-5">Appointment Now</Button>
+            <Row className="my-5">
+                <Col md={6}>
+                    <img src={serviceDetails?.img} alt="service" height="400px" />
+                </Col>
+                <Col md={6}>
+                    <h2 className="text-info"> {serviceDetails?.place}</h2>
+                    <h3 className=""><span className="fw-bold">Location:</span> {serviceDetails?.location}</h3>
+                    <div className="d-flex justify-content-between text-primary">
+                        <p><span className="fw-bold">Days:</span> {serviceDetails?.days}</p>
+                        <p><span className="fw-bold">Cost:</span> ${serviceDetails?.price}/Person</p>
+                    </div>
+                    <p>{serviceDetails?.details}</p>
+                    <Button variant="info" className="mb-5">Travel Now</Button>
                 </Col>
             </Row>
         </Container>

@@ -7,7 +7,7 @@ import './Serviceitem.css'
 
 const Serviceitem = (props) => {
     // take data using props 
-    const { id, place, img } = props.service;
+    const { _id, place, img, location, days, price } = props.service;
 
     return (
         <Col>
@@ -15,10 +15,14 @@ const Serviceitem = (props) => {
             <Card className="card">
                 <Card.Img variant="top" src={img} className="card-img" />
                 <Card.Body>
-                    <Card.Title className="fw-bold">{place}</Card.Title>
-
-                    <Link to={`service/${id}`}>
-                        <Button variant="info"> Appointment for {place}</Button>
+                    <Card.Title className="">{place}</Card.Title>
+                    <h5 className="text-info"><span className="fw-bold">Location:</span> {location}</h5>
+                    <div className="d-flex justify-content-between">
+                        <p><span className="fw-bold">Days:</span> {days}</p>
+                        <p><span className="fw-bold">Cost:</span> ${price}/Person</p>
+                    </div>
+                    <Link to={`service/${_id}`}>
+                        <Button variant="info"> See Details </Button>
                     </Link>
                 </Card.Body>
             </Card>

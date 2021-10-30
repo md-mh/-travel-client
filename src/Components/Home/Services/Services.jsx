@@ -7,7 +7,7 @@ import Serviceitem from './Serviceitem/Serviceitem'
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/show/')
+        fetch('https://pure-plains-81807.herokuapp.com/show/')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);

@@ -21,6 +21,8 @@ const Header = () => {
                             {user.email ?
 
                                 <span className="profilemenu">
+                                    <Link className="nav-link" to="/myTour">My Tour</Link>
+                                    <Link className="nav-link" to="/manageTour">Manage Tour</Link>
                                     <Link className="nav-link" to="/addPlace">Add a Place</Link>
                                     <span className="loginUser" >{user.displayName}</span>
                                     <button onClick={logOut} className="nav-link login" >Logout</button>

@@ -8,6 +8,8 @@ import Home from "./Components/Home/Home";
 import Singleservice from "./Components/Home/Services/Singleservice/Singleservice";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import AddPlace from "./Components/Profiles/AddPlace";
+import ManageTour from "./Components/Profiles/ManageTour";
+import MyTour from "./Components/Profiles/MyTour";
 import AuthProvider from "./Context/AuthProvider";
 
 
@@ -23,6 +25,8 @@ function App() {
           <Route path="/registration"> <Registration></Registration> </Route>
           <PrivateRoute exact path="/service/:id"><Singleservice></Singleservice></PrivateRoute>
           <PrivateRoute path="/addPlace"><AddPlace></AddPlace></PrivateRoute >
+          <PrivateRoute path="/manageTour"> <ManageTour></ManageTour> </PrivateRoute >
+          <PrivateRoute path="/myTour"> <MyTour></MyTour> </PrivateRoute >
 
           <Route path='/*'><Nopage></Nopage></Route>
         </Switch>

@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <>
             {/* Header and navbar area  */}
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" fixed="top">
                 <Container>
                     <Navbar.Brand href="/"><h2>Travel</h2></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -22,7 +22,7 @@ const Header = () => {
 
                                 <span className="profilemenu">
                                     <Link className="nav-link" to="/addPlace">Add a Place</Link>
-                                    <span className="nav-link loginUser" >{user.displayName}</span>
+                                    <span className="loginUser" >{user.displayName}</span>
                                     <button onClick={logOut} className="nav-link login" >Logout</button>
                                 </span>
 

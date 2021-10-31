@@ -47,9 +47,8 @@ const ManageTour = () => {
                 body: JSON.stringify(oneOrder)
             })
             alert('Status Update Successful');
-            // setOneOrder({});
-            // const update = orders.filter(data => data._id !== id);
-            // setOrders(update);
+            const update = orders;
+            setOrders(update);
 
         }
 

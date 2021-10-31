@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row, Table, Button } from 'react-bootstrap';
+import useAuth from '../../Hooks/useAuth';
 
-const MyTour = () => {
+const ManageTour = () => {
+    const { user } = useAuth();
     const [orders, setOrders] = useState([]);
+    const [myorder, setMyorder] = useState([]);
     useEffect(() => {
-        fetch('https://pure-plains-81807.herokuapp.com//order')
+        fetch('https://pure-plains-81807.herokuapp.com/order')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
+
+    console.log(user.email);
+    console.log(orders.email);
+
+    useEffect(
+        () => {
+            const foundOrder = orders.filter(order => order.email === user.email)
+            setMyorder(foundOrder);
+        }, [orders])
+
+
     const handleDelete = id => {
-        fetch(`https://pure-plains-81807.herokuapp.com/${id}`, {
+        fetch(`https://pure-plains-81807.herokuapp.com/order/${id}`, {
             method: "DELETE"
         })
-        alert('Delete');
+        alert("Deleted");
         const remaining = orders.filter(data => data._id !== id);
         setOrders(remaining);
 
@@ -21,21 +35,23 @@ const MyTour = () => {
     return (
         <Container>
             <Row className="justify-content-center my-5">
-                <Col md={8}>
+                <Col md={10}>
                     <Table>
                         <thead>
                             <tr>
                                 <th>Place</th>
-                                <th>Email</th>
+                                <th>Name</th>
+                                <th>Phone</th>
                                 <th>Remove</th>
                             </tr>
                         </thead>
                         {
-                            orders.map(order => <tbody key={order._id} order={order}>
+                            myorder.map(order => <tbody key={order._id} order={order}>
                                 <tr>
                                     <td>{order.place}</td>
-                                    <td>{order.email}</td>
-                                    <td><button onClick={() => handleDelete(order._id)}>Delete</button></td>
+                                    <td>{order.name}</td>
+                                    <td>{order.mobile}</td>
+                                    <td><Button className="btn-danger" onClick={() => handleDelete(order._id)}>Delete</Button></td>
                                 </tr>
                             </tbody>)
                         }
@@ -47,4 +63,4 @@ const MyTour = () => {
     );
 };
 
-export default MyTour;
+export default ManageTour;

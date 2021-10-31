@@ -22,11 +22,11 @@ const Login = () => {
 
     return (
         <Container>
-            <Row className="my-5">
-                <Col md={{ span: 4, offset: 1 }}>
+            <br /><h2 className="text-center">Please Login</h2>
+            <Row className="my-5 d-flex align-items-center">
 
+                <Col md={{ span: 4, offset: 1 }}>
                     {/* login form  */}
-                    <h2>Please Login</h2><br />
                     <Form onSubmit={handleEmailLogin}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
@@ -38,16 +38,15 @@ const Login = () => {
                             <Form.Control onBlur={handlepassword} type="password" placeholder="Password" />
                         </Form.Group>
                         <p className="text-danger">{error}</p>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
+                        <Button variant="primary" type="submit">Submit</Button>
+                        <br /><br />
+                        <span>Don't have an Account <Link to="/registration"> Please Registration</Link> </span>
                     </Form>
-                </Col>
-                <Col md={{ span: 4, offset: 1 }}>
-
                     {/* social login component  */}
                     <Sociallogin></Sociallogin>
-                    <span>Don't have an Account <Link to="/registration"> Please Registration</Link> </span>
+                </Col>
+                <Col md={{ span: 4, offset: 1 }}>
+                    <img src="https://i.ibb.co/d4LYbVq/login.png" alt="Login-img" />
                 </Col>
             </Row>
 

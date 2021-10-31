@@ -15,6 +15,7 @@ import AuthProvider from "./Context/AuthProvider";
 
 
 function App() {
+
   return (
     <AuthProvider>
       <BrowserRouter>
@@ -25,8 +26,8 @@ function App() {
           <Route path="/login"> <Login></Login></Route>
           <Route path="/registration"> <Registration></Registration> </Route>
           <PrivateRoute exact path="/service/:id"><Singleservice></Singleservice></PrivateRoute>
-          <PrivateRoute path="/addPlace"><AddPlace></AddPlace></PrivateRoute >
           <PrivateRoute exact path="/placeOrder/:id"> <PlaceOrder></PlaceOrder> </PrivateRoute >
+          <PrivateRoute path="/addPlace"><AddPlace></AddPlace></PrivateRoute >
           <PrivateRoute path="/manageTour"> <ManageTour></ManageTour> </PrivateRoute >
           <PrivateRoute path="/myTour"> <MyTour></MyTour> </PrivateRoute >
 

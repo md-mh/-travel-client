@@ -30,7 +30,7 @@ const Sociallogin = () => {
 
     return (
         <div>
-            <br /><h3>Social Login</h3><br />
+            <br /><h5>Social Login</h5><br />
 
             {/* Social button  */}
 

@@ -8,12 +8,12 @@ const Registration = () => {
     const { error, registrationUsingEmail, handlename, handleemail, handlepassword } = useAuth();
     return (
         <Container>
-            <Row className="my-5">
+            {/* Registration form  */}
+            <br /> <h2 className="text-center">Please  Registration </h2>
+
+            <Row className="my-5 d-flex align-items-center">
                 <Col md={{ span: 4, offset: 1 }}>
-
-                    {/* Registration form  */}
-                    <h2>Please  Registration </h2><br />
-
+                    {/* registration form  */}
                     <Form onSubmit={registrationUsingEmail}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Username</Form.Label>
@@ -30,16 +30,15 @@ const Registration = () => {
                             <Form.Control onBlur={handlepassword} type="password" placeholder="Password" />
                         </Form.Group>
                         <p className="text-danger">{error}</p>
-                        <Button variant="primary" type="submit">
-                            Submit
-                        </Button>
+                        <Button variant="primary" type="submit">Submit</Button>
+                        <br /><br />
+                        <span>Already have an Account <Link to="/login"> Please Login</Link> </span>
                     </Form>
-                </Col>
-                <Col md={{ span: 4, offset: 1 }}>
-
                     {/* social login component  */}
                     <Sociallogin></Sociallogin>
-                    <span>Already have an Account <Link to="/login"> Please Login</Link> </span>
+                </Col>
+                <Col md={{ span: 4, offset: 1 }}>
+                    <img src="https://i.ibb.co/d4LYbVq/login.png" alt="Login-img" />
                 </Col>
             </Row>
         </Container>

@@ -21,7 +21,7 @@ const Serviceitem = (props) => {
                         <p><span className="fw-bold">Days:</span> {days}</p>
                         <p><span className="fw-bold">Cost:</span> ${price}/Person</p>
                     </div>
-                    <Link to={`service/${_id}`}>
+                    <Link to={`/service/${_id}`}>
                         <Button variant="info"> See Details </Button>
                     </Link>
                 </Card.Body>

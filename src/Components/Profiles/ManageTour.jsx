@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row, Table, Button } from 'react-bootstrap';
 
 const ManageTour = () => {
 
@@ -14,7 +14,7 @@ const ManageTour = () => {
         fetch(`https://pure-plains-81807.herokuapp.com/order/${id}`, {
             method: "DELETE"
         })
-        alert('Delete');
+        alert("Deleted");
         const remaining = orders.filter(data => data._id !== id);
         setOrders(remaining);
 
@@ -38,7 +38,7 @@ const ManageTour = () => {
                                     <td>{order.place}</td>
                                     <td>{order.name}</td>
                                     <td>{order.mobile}</td>
-                                    <td><button onClick={() => handleDelete(order._id)}>Delete</button></td>
+                                    <td><Button className="btn-danger" onClick={() => handleDelete(order._id)}>Delete</Button></td>
                                 </tr>
                             </tbody>)
                         }

@@ -20,7 +20,7 @@ const ManageTour = () => {
             setMyorder(foundOrder);
         }, [orders])
 
-
+    // Delete an order 
     const handleDelete = id => {
         fetch(`https://pure-plains-81807.herokuapp.com/order/${id}`, {
             method: "DELETE"

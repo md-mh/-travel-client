@@ -28,9 +28,10 @@ const ManageTour = () => {
     // Update status 
     const handleUpdateStatus = id => {
         const url = `https://pure-plains-81807.herokuapp.com/order/${id}`;
+
         fetch(url)
             .then(res => res.json())
-            .then(data => setOneOrder(data))
+            .then(data => setOneOrder(data));
         console.log(oneOrder.status);
         if (oneOrder.status === "Pending") {
             oneOrder.status = "Approved";

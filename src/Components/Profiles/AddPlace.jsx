@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 
+
+// Add a Place page Components 
 const AddPlace = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {

@@ -3,6 +3,8 @@ import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from './../../Hooks/useAuth'
 
+
+// Place Order page Components 
 const PlaceOrder = () => {
 
     const { id } = useParams();

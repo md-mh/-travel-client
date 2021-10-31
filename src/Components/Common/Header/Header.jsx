@@ -16,12 +16,11 @@ const Header = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Link className="nav-link" to="/home">Home</Link>
+
                             {/* {user.email && <span className="nav-link loginUser" >{user.displayName}</span>} */}
-
                             {user.email ?
-
                                 <span className="profilemenu">
-                                    <Link className="nav-link" to="myTour">My Tour</Link>
+                                    <Link className="nav-link" to="/myTour">My Tour</Link>
                                     <Link className="nav-link" to="/manageTour">Manage Tour</Link>
                                     <Link className="nav-link" to="/addPlace">Add a Place</Link>
                                     <span className="loginUser" >{user.displayName}</span>

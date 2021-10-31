@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Table, Button } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 
+
+// My Tour page Components 
 const ManageTour = () => {
     const { user } = useAuth();
     const [orders, setOrders] = useState([]);

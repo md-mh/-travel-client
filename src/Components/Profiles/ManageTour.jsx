@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row, Table, Button } from 'react-bootstrap';
 
+
+// Manage Tour page Components 
 const ManageTour = () => {
 
     const [orders, setOrders] = useState([]);

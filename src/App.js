@@ -25,7 +25,7 @@ function App() {
           <Route path="/home"> <Home></Home></Route>
           <Route path="/login"> <Login></Login></Route>
           <Route path="/registration"> <Registration></Registration> </Route>
-          <PrivateRoute exact path="/service/:id"><Singleservice></Singleservice></PrivateRoute>
+          <Route exact path="/service/:id"><Singleservice></Singleservice></Route>
           <PrivateRoute exact path="/placeOrder/:id"> <PlaceOrder></PlaceOrder> </PrivateRoute >
           <PrivateRoute path="/addPlace"><AddPlace></AddPlace></PrivateRoute >
           <PrivateRoute path="/manageTour"> <ManageTour></ManageTour> </PrivateRoute >

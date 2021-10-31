@@ -30,8 +30,9 @@ const PlaceOrder = () => {
         const mobile = mobileRef.current.value;
         const members = membersRef.current.value;
         const address = addressRef.current.value;
+        const status = "Pending";
 
-        const newOrder = { name, email, place, mobile, members, address };
+        const newOrder = { name, email, place, mobile, members, address, status };
 
         fetch('https://pure-plains-81807.herokuapp.com/order', {
             method: 'POST',

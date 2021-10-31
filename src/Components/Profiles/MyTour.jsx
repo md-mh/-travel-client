@@ -12,10 +12,6 @@ const ManageTour = () => {
             .then(data => setOrders(data))
     }, [])
 
-
-    console.log(user.email);
-    console.log(orders.email);
-
     useEffect(
         () => {
             const foundOrder = orders.filter(order => order.email === user.email)

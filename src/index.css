@@ -11,3 +11,8 @@ img{
 p{
   text-align: justify;
 }
+.spinner{
+  text-align: center;
+  position: sticky;
+  top: 15%;
+}

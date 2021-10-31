@@ -4,13 +4,13 @@ import { Col, Container, Row, Table } from 'react-bootstrap';
 const MyTour = () => {
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://pure-plains-81807.herokuapp.com//order')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://pure-plains-81807.herokuapp.com/${id}`, {
             method: "DELETE"
         })
         alert('Delete');

@@ -10,7 +10,7 @@ const Singleservice = () => {
     const [serviceDetails, setServiceDetails] = useState([]);
     useEffect(
         () => {
-            fetch(`http://localhost:5000/show/${id}`)
+            fetch(`https://pure-plains-81807.herokuapp.com/show/${id}`)
                 .then(res => res.json())
                 .then(data => setServiceDetails(data))
         }, []);

@@ -7,7 +7,7 @@ const AddPlace = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/show', data)
+        axios.post('https://pure-plains-81807.herokuapp.com/show', data)
         alert('Add Place Successfully');
         reset();
     }

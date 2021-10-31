@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-// import { useForm } from 'react-hook-form';
-// import axios from 'axios';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import useAuth from './../../Hooks/useAuth'
@@ -11,41 +9,37 @@ const PlaceOrder = () => {
     const [serviceDetails, setServiceDetails] = useState([]);
     useEffect(
         () => {
-            fetch(`http://localhost:5000/show/${id}`)
+            fetch(`https://pure-plains-81807.herokuapp.com/show/${id}`)
                 .then(res => res.json())
                 .then(data => setServiceDetails(data))
         }, []);
 
     const { user } = useAuth();
-    console.log(user.email);
-    // const { register, handleSubmit, reset } = useForm();
-    // const onSubmit = data => {
 
-    //     axios.post('http://localhost:5000/order', data)
-    //     alert('Order Place Successfully');
-    //     reset();
-    // }
     const mobileRef = useRef();
     const membersRef = useRef();
     const addressRef = useRef();
+
     const handleOrder = e => {
         e.preventDefault();
         const place = serviceDetails?.place;
         const email = user.email;
+        const name = user.displayName;
         const mobile = mobileRef.current.value;
         const members = membersRef.current.value;
         const address = addressRef.current.value;
 
-        const newOrder = { place, email, mobile, members, address };
+        const newOrder = { name, email, place, mobile, members, address };
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://pure-plains-81807.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newOrder)
         })
-        alert('Successfully added your Order.')
+        alert('Successfully added your Order.');
+        e.target.reset();
 
     }
 
@@ -59,11 +53,11 @@ const PlaceOrder = () => {
                         <Form onSubmit={handleOrder}>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Mobile Number</Form.Label>
-                                <Form.Control type="number" placeholder="Write your Mobile number" ref={mobileRef} />
+                                <Form.Control type="number" placeholder="Write your Mobile number" ref={mobileRef} required />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Members</Form.Label>
-                                <Form.Control type="number" placeholder="Numbers of Member" ref={membersRef} />
+                                <Form.Control type="number" placeholder="Numbers of Member" ref={membersRef} required />
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Address</Form.Label>
